@@ -2,6 +2,7 @@
     "name": "react-code-actions",
     "displayName": "React Code Actions",
     "description": "Speed up react development",
+    "repository": "https://github.com/sreevisakh/react-code-actions.git",
     "version": "0.0.2",
     "publisher": "Sreevisakh",
     "engines": {
