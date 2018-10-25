@@ -1,0 +1,79 @@
+{
+    "name": "react-code-actions",
+    "displayName": "React Code Actions",
+    "description": "Speed up react development",
+    "version": "0.0.2",
+    "publisher": "Sreevisakh",
+    "engines": {
+        "vscode": "^1.28.0"
+    },
+    "categories": [
+        "Other"
+    ],
+    "activationEvents": [
+        "onCommand:add-to-proptypes",
+        "onCommand:add-handler-function"
+    ],
+    "main": "./extension",
+    "contributes": {
+        "commands": [
+            {
+                "command": "add-to-proptypes",
+                "title": "Add to propTypes"
+            },
+            {
+                "command": "add-handler-function",
+                "title": "Add Handler Function"
+            }
+        ],
+        "menus": {
+            "editor/context": [
+                {
+                    "command": "add-to-proptypes",
+                    "when": "editorLangId == javascript && editorHasSelection"
+                },
+                {
+                    "command": "add-handler-function",
+                    "when": "editorLangId == javascript && editorHasSelection"
+                }
+            ]
+        }
+    },
+    "propTypes":[
+        "shape({})",
+        "shape({}).isRequired", 
+        "function",
+        "function.isRequired",
+        "arrayOf()",
+        "arrayOf().isRequired",
+        "number",
+        "number.isRequired",
+        "string",
+        "string.isRequired",
+        "boolean",
+        "boolean.isRequired",
+        "element",
+        "element.isRequired",
+        "oneOf([])"
+    ],
+    "scripts": {
+        "postinstall": "node ./node_modules/vscode/bin/install",
+        "test": "node ./node_modules/vscode/bin/test"
+    },
+    "devDependencies": {
+        "@babel/core": "^7.1.2",
+        "@babel/plugin-proposal-object-rest-spread": "^7.0.0",
+        "@types/mocha": "^2.2.42",
+        "@types/node": "^8.10.25",
+        "eslint": "^4.11.0",
+        "typescript": "^2.6.1",
+        "vscode": "^1.1.21"
+    },
+    "dependencies": {
+        "@babel/parser": "^7.1.3",
+        "@babel/traverse": "^7.1.4",
+        "@babel/types": "^7.1.3",
+        "babel-generator": "^6.26.1",
+        "prettier": "^1.14.3"
+    }
+}
